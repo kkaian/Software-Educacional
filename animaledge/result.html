@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Resultado</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<main class="container" id="resultado"></main>
+
+<script>
+    const acertos = Number(localStorage.getItem("acertos"));
+
+    const div = document.getElementById("resultado");
+
+    if (acertos >= 3) {
+        div.innerHTML = `
+            <h1>Parabéns!</h1>
+            <p>Você acertou ${acertos}/5!</p>
+            <video controls width="600">
+                <source src="videos/parabens.mp4">
+            </video>
+            <a class="btn" href="index.html">Voltar ao início</a>
+        `;
+    } else {
+        div.innerHTML = `
+            <h1>Você não está preparado o suficiente...</h1>
+            <p>Você acertou apenas ${acertos}/5</p>
+
+            <div class="imgs-stop">
+                <img src="imgs/stop1.jpg">
+                <img src="imgs/stop2.jpg">
+                <img src="imgs/stop3.jpg">
+                <img src="imgs/stop4.jpg">
+                <img src="imgs/stop5.jpg">
+            </div>
+
+            <p>Você não conseguiu criar a animação.</p>
+
+            <a class="btn" href="index.html">Tentar novamente</a>
+        `;
+    }
+</script>
+
+</body>
+</html>
