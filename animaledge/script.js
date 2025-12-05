@@ -75,6 +75,6 @@ document.getElementById("btnResponder").onclick = () => {
 };
 
 window.onload = () => {
-    perguntas = embaralhar(bancoPerguntas).slice(0,15);
+    perguntas = embaralhar(bancoPerguntas).slice(0,5);
     carregarPergunta();
 };
